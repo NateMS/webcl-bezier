@@ -200,7 +200,7 @@ ctx.stroke();</pre>
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.moveTo(20, 20);
-<b>ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);</b>
+<b>ctx.bezierCurveTo(40, 130, 220, 20, 220, 130);</b>
 ctx.stroke();</pre>
                 </div>
             </div>
@@ -221,7 +221,7 @@ ctx.stroke();</pre>
                     <pre>P = (1−t)<sup>3</sup>P<sub>1</sub> + 3(1−t)<sup>2</sup>tP<sub>2</sub> +3(1−t)t<sup>2</sup>P<sub>3</sub> + t<sup>3</sup>P<sub>4</sub></pre>
                 </div>
             </div>
-            <p>Die x und y Koordinaten können durch ersetzen von P herausgefunden werden.<br> Beispielsweise für 3 Kontrollpunkte:</p>
+            <p>Die <code>x</code> und <code>y</code> Koordinaten können durch ersetzen von <code>P</code> herausgefunden werden.<br> Beispielsweise für 3 Kontrollpunkte:</p>
             <pre>x = (1−t)<sup>2</sup>x<sub>1</sub> + 2(1−t)tx<sub>2</sub> + t<sup>2</sup>x<sub>3</sub>
 y = (1−t)<sup>2</sup>y<sub>1</sub> + 2(1−t)ty<sub>2</sub> + t<sup>2</sup>y<sub>3</sub></pre>
             <p><code>x1, y1</code> wird ersetzt durch die Koordinaten des ersten Kontrollpunkts, <code>x2, y2</code> des zweiten usw.<br> Nun erhält man die Koordinaten der Kurve, wenn man <code>t</code> von <code>0</code> nach <code>1</code> laufen lässt.</p>

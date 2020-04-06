@@ -94,7 +94,7 @@ window.onload = function() {
     var ctx = c.getContext("2d");
     ctx.beginPath();
     ctx.moveTo(20, 20);
-    ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);
+    ctx.bezierCurveTo(40, 130, 220, 20, 220, 130);
     ctx.stroke();
 }
 
