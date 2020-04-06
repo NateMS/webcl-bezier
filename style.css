@@ -11,7 +11,8 @@ body {
 }
 
 canvas {
-    display: block;
+    height: 200px;
+    width: 200px;
 }
 
 .iframes .frame-wrapper,
@@ -125,7 +126,7 @@ ul {
 
 .transitions {
     display: inline-grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
 }
 

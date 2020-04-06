@@ -80,8 +80,8 @@ function showTransitionGraph(canvasId, cp1, cp2) {
     let factor = 200;
     var canvas = document.getElementById(canvasId),
         context = canvas.getContext("2d"),
-        width = canvas.width = window.innerWidth,
-        height = canvas.height = window.innerHeight,
+        width = canvas.width = factor,
+        height = canvas.height = factor,
         p0 = {
             x: 0 * factor,
             y: 1 * factor
