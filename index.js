@@ -3,29 +3,100 @@ function changeSource(newSource) {
 }
 
 window.onload = function() {
+    let transitions = [{
+            id: "canvas-linear",
+            cp1: {
+                x: 0,
+                y: 1
+            },
+            cp2: {
+                x: 1,
+                y: 0
+            },
+        },
+        {
+            id: "canvas-ease",
+            cp1: {
+                x: 0.25,
+                y: 0.9
+            },
+            cp2: {
+                x: 0.25,
+                y: 0
+            },
+        },
+        {
+            id: "canvas-ease-in",
+            cp1: {
+                x: 0.42,
+                y: 200
+            },
+            cp2: {
+                x: 200,
+                y: 0
+            },
+        },
+        {
+            id: "canvas-ease-in-out",
+            cp1: {
+                x: 0.42,
+                y: 1
+            },
+            cp2: {
+                x: 0.58,
+                y: 0
+            },
+        },
+        {
+            id: "canvas-ease-out",
+            cp1: {
+                x: 0,
+                y: 1
+            },
+            cp2: {
+                x: 0.58,
+                y: 0
+            },
+        },
+        {
+            id: "canvas-custom",
+            cp1: {
+                x: 0.25,
+                y: 0.7
+            },
+            cp2: {
+                x: 0.7,
+                y: 1.3
+            },
+        }
+    ];
 
+    transitions.forEach(transition => {
+        showTransitionGraph(transition.id, transition.cp1, transition.cp2);
+    });
 }
 
 function showTransitionGraph(canvasId, cp1, cp2) {
+    let factor = 200;
     var canvas = document.getElementById(canvasId),
         context = canvas.getContext("2d"),
         width = canvas.width = window.innerWidth,
         height = canvas.height = window.innerHeight,
         p0 = {
-            x: 0,
-            y: 200
+            x: 0 * factor,
+            y: 1 * factor
         },
         p1 = {
-            x: cp1.x,
-            y: cp1.y
+            x: cp1.x * factor,
+            y: cp1.y * factor
         },
         p2 = {
-            x: cp2.x,
-            y: cp2.y
+            x: cp2.x * factor,
+            y: cp2.y * factor
         },
         p3 = {
-            x: 200,
-            y: 0
+            x: 1 * factor,
+            y: 0 * factor
         },
         pA = {},
         pB = {},
@@ -36,26 +107,13 @@ function showTransitionGraph(canvasId, cp1, cp2) {
         t = 1,
         maxT = 0,
         dir = 0.005,
-        animating = false;;
+        animating = true;;
 
     context.scale(1, 1);
-    context.font = "25px Arial";
-
     draw();
-    document.body.addEventListener("click", function() {
-        draw();
-    });
 
     function draw() {
         context.clearRect(0, 0, width, height);
-
-        context.strokeStyle = "#ccc";
-        context.beginPath();
-        context.moveTo(p0.x, p0.y);
-        context.lineTo(p1.x, p1.y);
-        context.lineTo(p2.x, p2.y);
-        context.lineTo(p3.x, p3.y);
-        context.stroke();
 
         context.beginPath();
         context.arc(p0.x, p0.y, 4, 0, Math.PI * 2, false);
@@ -72,7 +130,6 @@ function showTransitionGraph(canvasId, cp1, cp2) {
         context.beginPath();
         context.arc(p3.x, p3.y, 4, 0, Math.PI * 2, false);
         context.fill();
-
 
         context.strokeStyle = "red";
         context.beginPath();
@@ -100,46 +157,6 @@ function showTransitionGraph(canvasId, cp1, cp2) {
             context.lineTo(pFinal.x, pFinal.y);
         }
         context.stroke();
-
-        context.beginPath();
-        context.strokeStyle = "green";
-        context.moveTo(pA.x, pA.y);
-        context.lineTo(pB.x, pB.y);
-        context.lineTo(pC.x, pC.y);
-        context.stroke();
-
-        context.beginPath();
-        context.strokeStyle = "blue";
-        context.moveTo(pM.x, pM.y);
-        context.lineTo(pN.x, pN.y);
-        context.stroke();
-
-        context.fillStyle = "green";
-        context.beginPath();
-        context.arc(pA.x, pA.y, 4, 0, Math.PI * 2, false);
-        context.fill();
-
-        context.beginPath();
-        context.arc(pB.x, pB.y, 4, 0, Math.PI * 2, false);
-        context.fill();
-
-        context.beginPath();
-        context.arc(pC.x, pC.y, 4, 0, Math.PI * 2, false);
-        context.fill();
-
-        context.fillStyle = "blue";
-        context.beginPath();
-        context.arc(pM.x, pM.y, 4, 0, Math.PI * 2, false);
-        context.fill();
-
-        context.beginPath();
-        context.arc(pN.x, pN.y, 4, 0, Math.PI * 2, false);
-        context.fill();
-
-        context.fillStyle = "red";
-        context.beginPath();
-        context.arc(pFinal.x, pFinal.y, 4, 0, Math.PI * 2, false);
-        context.fill();
 
         context.fillStyle = "black";
         maxT += dir;
