@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezierkurven</title>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="page pg-dark">
+        <div class="content">
+            <h1>Bezierkurven</h1>
+            <p>Alina Wüthrich & Nadim Salloum</p>
+            <div class="iframes">
+                <div class="frame-wrapper">
+                    <h3>Linear</h3>
+                    <iframe id="linear" src="./iframes/linear.html" frameborder="0"></iframe>
+                    <p>Kein Kontrollpunkt</p>
+                </div>
+                <div class="frame-wrapper">
+                    <h3>Quadratisch</h3>
+                    <iframe id="quadratic" src="./iframes/quadratic.html" frameborder="0"></iframe>
+                    <p>Ein Kontrollpunkt</p>
+                </div>
+                <div class="frame-wrapper">
+                    <h3>Kubisch</h3>
+                    <iframe id="cubic" src="./iframes/cubic.html" frameborder="0"></iframe>
+                    <p>Zwei Kontrollpunkte</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page pg-light" id="demo">
+        <div class="content">
+            <h1>Demo</h1>
+            <ul id="navigation">
+                <li><a href="#demo" onClick="changeSource('./iframes/demo1.html')">Demo 1</a></li>
+                <li><a href="#demo" onClick="changeSource('./iframes/demo2.html')">Demo 2</a></li>
+                <li><a href="#demo" onClick="changeSource('./iframes/demo3.html')">Demo 3</a></li>
+                <li><a href="#demo" onClick="changeSource('./iframes/demo4.html')">Demo 4</a></li>
+                <li><a href="#demo" onClick="changeSource('./iframes/demo5.html')">Demo 5</a></li>
+                <li><a href="#demo" onClick="changeSource('./iframes/demo6.html')">Demo 6</a></li>
+            </ul>
+            <iframe id="iframe" src="./iframes/demo1.html" frameborder="0"></iframe>
+            <p>Quelle: <a href="https://github.com/bit101/CodingMath/">https://github.com/bit101/CodingMath/</a></p>
+        </div>
+    </div>
+
+    <div class="page pg-dark">
+        <div class="content">
+            <h1>Anwendungen</h1>
+            <div class="examples">
+                <div class="example">
+                    <h3>Computergrafiken</h3>
+                    <img src="img/computergraphics.gif" alt="">
+                    <p><a href="https://graphicdesign.stackexchange.com/questions/115964/bezier-curve-handle-control-in-illustrator">Quelle</a></p>
+                </div>
+                <div class="example">
+                    <h3>Animationen</h3>
+                    <img src="img/computergraphics.gif" alt="">
+                </div>
+                <div class="example">
+                    <h3>Schriftarten</h3>
+                    <img src="img/font.png" alt="">
+                    <p><a href="https://math.stackexchange.com/questions/2576260/b%C3%A9zier-curves-a-detailed-explanation-of-how-draw-a-letter">Quelle</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page pg-light">
+        <div class="content">
+            <h1>CSS Transitions</h1>
+            <div class="transitions">
+                <div class="transition">
+                    <h3>Linear</h3>
+                    <div>
+                        <canvas id="canvas-linear"></canvas>
+                        <pre>
+                            transition-timing-function: linear;
+                            transition-timing-function: cubic-bezier(0, 0, 1, 1);
+                        </pre>
+                    </div>
+                </div>
+                <div class="transition">
+                    <h3>Ease</h3>
+                    <div>
+                        <canvas id="canvas-ease"></canvas>
+                        <pre>
+                            transition-timing-function: ease;
+                            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
