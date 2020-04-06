@@ -7,6 +7,7 @@
     <title>Bezierkurven</title>
     <script type="text/javascript" src="iframes/utils.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,24 +15,28 @@
     <div class="page pg-dark">
         <div class="content">
             <h1>Bezierkurven</h1>
-            <p>Alina Wüthrich & Nadim Salloum</p>
-            <div class="iframes">
-                <div class="frame-wrapper">
+            <p>Alina Wüthrich & Nadim Salloum (<a href="https://github.com/NateMS/webcl-bezier">https://github.com/NateMS/webcl-bezier</a>)</p>
+            <br><br><br><br><br>
+            <div class="grid-wrapper grid-3">
+                <div class="grid-item">
                     <h3>Linear</h3>
                     <iframe id="linear" src="./iframes/linear.html" frameborder="0"></iframe>
                     <p>Kein Kontrollpunkt</p>
                 </div>
-                <div class="frame-wrapper">
+                <div class="grid-item">
                     <h3>Quadratisch</h3>
                     <iframe id="quadratic" src="./iframes/quadratic.html" frameborder="0"></iframe>
                     <p>Ein Kontrollpunkt</p>
                 </div>
-                <div class="frame-wrapper">
+                <div class="grid-item">
                     <h3>Kubisch</h3>
                     <iframe id="cubic" src="./iframes/cubic.html" frameborder="0"></iframe>
                     <p>Zwei Kontrollpunkte</p>
                 </div>
             </div>
+            <p>Es können beliebig viele weitere Kontrollpunkte hinzugefügt werden.
+                <br>Die Berechnung wird dadurch entsprechend komplexer.
+                <br>Es gibt dazu auch die Alternative, dass solche Kurven aus mehreren quadratischen Kurven imitiert werden. </p>
         </div>
     </div>
 
@@ -39,12 +44,12 @@
         <div class="content">
             <h1>Demo</h1>
             <ul id="navigation">
-                <li><a href="#demo" onClick="changeSource('./iframes/demo1.html')">Demo 1</a></li>
-                <li><a href="#demo" onClick="changeSource('./iframes/demo2.html')">Demo 2</a></li>
-                <li><a href="#demo" onClick="changeSource('./iframes/demo3.html')">Demo 3</a></li>
-                <li><a href="#demo" onClick="changeSource('./iframes/demo4.html')">Demo 4</a></li>
-                <li><a href="#demo" onClick="changeSource('./iframes/demo5.html')">Demo 5</a></li>
-                <li><a href="#demo" onClick="changeSource('./iframes/demo6.html')">Demo 6</a></li>
+                <li><a class="framelink active" href="#demo" data-src="./iframes/demo1.html">Demo 1</a></li>
+                <li><a class="framelink" href="#demo" data-src="./iframes/demo2.html">Demo 2</a></li>
+                <li><a class="framelink" href="#demo" data-src="./iframes/demo3.html">Demo 3</a></li>
+                <li><a class="framelink" href="#demo" data-src="./iframes/demo4.html">Demo 4</a></li>
+                <li><a class="framelink" href="#demo" data-src="./iframes/demo5.html">Demo 5</a></li>
+                <li><a class="framelink" href="#demo" data-src="./iframes/demo6.html">Demo 6</a></li>
             </ul>
             <iframe id="iframe" src="./iframes/demo1.html" frameborder="0"></iframe>
             <p>Quelle: <a href="https://github.com/bit101/CodingMath/">https://github.com/bit101/CodingMath/</a></p>
@@ -54,19 +59,20 @@
     <div class="page pg-dark">
         <div class="content">
             <h1>Anwendungen</h1>
-            <div class="examples">
-                <div class="example">
+            <div class="grid-wrapper grid-3">
+                <div class="grid-item">
                     <h3>Computergrafiken</h3>
-                    <img src="img/computergraphics.gif" alt="">
+                    <div class="img" style="background-image: url('img/computergraphics.gif');"> </div>
                     <p><a href="https://graphicdesign.stackexchange.com/questions/115964/bezier-curve-handle-control-in-illustrator">Quelle</a></p>
                 </div>
-                <div class="example">
+                <div class="grid-item">
                     <h3>Animationen</h3>
-                    <img src="img/computergraphics.gif" alt="">
+                    <div class="img" style="background-image: url('img/computergraphics.gif');"></div>
                 </div>
-                <div class="example">
+                <div class="grid-item">
                     <h3>Schriftarten</h3>
-                    <img src="img/font.png" alt="">
+                    <div class="img" style="background-image: url('img/font.png');"></div>
+                    </span>
                     <p><a href="https://math.stackexchange.com/questions/2576260/b%C3%A9zier-curves-a-detailed-explanation-of-how-draw-a-letter">Quelle</a></p>
                 </div>
             </div>
@@ -76,8 +82,8 @@
     <div class="page pg-light">
         <div class="content">
             <h1>CSS Transitions</h1>
-            <div class="transitions">
-                <div class="transition">
+            <div class="grid-wrapper grid-2">
+                <div class="grid-item">
                     <h3>Linear</h3>
                     <div>
                         <canvas id="canvas-linear"></canvas>
@@ -85,7 +91,7 @@
 transition-timing-function: cubic-bezier(0, 0, 1, 1);</pre>
                     </div>
                 </div>
-                <div class="transition">
+                <div class="grid-item">
                     <h3>Ease</h3>
                     <div>
                         <canvas id="canvas-ease"></canvas>
@@ -93,7 +99,7 @@ transition-timing-function: cubic-bezier(0, 0, 1, 1);</pre>
 transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);</pre>
                     </div>
                 </div>
-                <div class="transition">
+                <div class="grid-item">
                     <h3>Ease-In</h3>
                     <div>
                         <canvas id="canvas-ease-in"></canvas>
@@ -101,7 +107,7 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);</pre>
 transition-timing-function: cubic-bezier(0.42, 0.0, 1.0, 1.0);</pre>
                     </div>
                 </div>
-                <div class="transition">
+                <div class="grid-item">
                     <h3>Ease-In-Out</h3>
                     <div>
                         <canvas id="canvas-ease-in-out"></canvas>
@@ -109,7 +115,7 @@ transition-timing-function: cubic-bezier(0.42, 0.0, 1.0, 1.0);</pre>
 transition-timing-function: cubic-bezier(0.42, 0.0, 0.58, 1.0);</pre>
                     </div>
                 </div>
-                <div class="transition">
+                <div class="grid-item">
                     <h3>Ease-Out</h3>
                     <div>
                         <canvas id="canvas-ease-out"></canvas>
@@ -117,7 +123,7 @@ transition-timing-function: cubic-bezier(0.42, 0.0, 0.58, 1.0);</pre>
 transition-timing-function: cubic-bezier(0.0, 0.0, 0.58, 1.0);</pre>
                     </div>
                 </div>
-                <div class="transition">
+                <div class="grid-item">
                     <h3>Custom</h3>
                     <div>
                         <canvas id="canvas-custom"></canvas>
@@ -125,20 +131,101 @@ transition-timing-function: cubic-bezier(0.0, 0.0, 0.58, 1.0);</pre>
                     </div>
                 </div>
             </div>
-            <div class="transition-boxes">
-                <p>linear</p>
-                <div class="animated-box" id="box-linear"></div>
-                <p>ease</p>
-                <div class="animated-box" id="box-ease"></div>
-                <p>ease-in</p>
-                <div class="animated-box" id="box-ease-in"></div>
-                <p>ease-in-out</p>
-                <div class="animated-box" id="box-ease-in-out"></div>
-                <p>ease-in-out</p>
-                <div class="animated-box" id="box-ease-out"></div>
-                <p>custom</p>
-                <div class="animated-box" id="box-custom"></div>
+            <p>Hier kann man gut mit Bezierkuven experimentieren: <a href="https://cubic-bezier.com">https://cubic-bezier.com</a></p>
+            <div class="transitions-wrapper">
+                <h2>Transitionen im Direktvergleich</h2>
+                <div class="transition-boxes">
+                    <div>
+                        <p>linear</p>
+                        <div>
+                            <div class="animated-box" id="box-linear"></div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <p>ease</p>
+                        <div>
+                            <div class="animated-box" id="box-ease"></div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <p>ease-in</p>
+                        <div>
+                            <div class="animated-box" id="box-ease-in"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>ease-in-out</p>
+                        <div>
+                            <div class="animated-box" id="box-ease-in-out"></div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <p>ease-out</p>
+                        <div>
+                            <div class="animated-box" id="box-ease-out"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>custom</p>
+                        <div>
+                            <div class="animated-box" id="box-custom"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div class="page pg-dark">
+        <div class="content">
+            <h1>Bezierkurven in JavaScript</h1>
+            <div class="grid-wrapper grid-2">
+                <div class="grid-item">
+                    <h3>Quadratische Kurve</h3>
+                    <canvas id="quadraticCanvas"></canvas>
+                    <pre>var c = document.getElementById("quadraticCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(20, 20);
+<b>ctx.quadraticCurveTo(20, 100, 200, 20);</b>
+ctx.stroke();</pre>
+                </div>
+                <div class="grid-item">
+                    <h3>Kubische Kurve</h3>
+                    <canvas id="cubicCanvas"></canvas>
+                    <pre>var c = document.getElementById("cubicCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(20, 20);
+<b>ctx.bezierCurveTo(20, 100, 200, 100, 200, 20);</b>
+ctx.stroke();</pre>
+                </div>
+            </div>
+            <p>Die Kurven können auch durch eine Formel berechnet werden. Dabei haben wir die Kontrollpunkte <code>P<sub>i</sub></code>. Ein Punkt hat jeweils die Koordinaten <code>P<sub>1</sub> = (x<sub>1</sub>, y<sub>1</sub>)</code> etc. und den Parameter
+                <code>t</code> zwischen <code>[0,1]</code>.<br>
+            </p>
+            <div class="grid-wrapper grid-3">
+                <div class="grid-item">
+                    <p>Für 2 Kontrollpunkte:</p>
+                    <pre>P = (1-t)P<sub>1</sub> + tP<sub>2</sub></pre>
+                </div>
+                <div class="grid-item">
+                    <p>Für 3 Kontrollpunkte:</p>
+                    <pre>P = (1−t)<sup>2</sup>P<sub>1</sub> + 2(1−t)tP<sub>2</sub> + t<sup>2</sup>P<sub>3</sub></pre>
+                </div>
+                <div class="grid-item">
+                    <p>Für 4 Kontrollpunkte:</p>
+                    <pre>P = (1−t)<sup>3</sup>P<sub>1</sub> + 3(1−t)<sup>2</sup>tP<sub>2</sub> +3(1−t)t<sup>2</sup>P<sub>3</sub> + t<sup>3</sup>P<sub>4</sub></pre>
+                </div>
+            </div>
+            <p>Die x und y Koordinaten können durch ersetzen von P herausgefunden werden.<br> Beispielsweise für 3 Kontrollpunkte:</p>
+            <pre>x = (1−t)<sup>2</sup>x<sub>1</sub> + 2(1−t)tx<sub>2</sub> + t<sup>2</sup>x<sub>3</sub>
+y = (1−t)<sup>2</sup>y<sub>1</sub> + 2(1−t)ty<sub>2</sub> + t<sup>2</sup>y<sub>3</sub></pre>
+            <p><code>x1, y1</code> wird ersetzt durch die Koordinaten des ersten Kontrollpunkts, <code>x2, y2</code> des zweiten usw.<br> Nun erhält man die Koordinaten der Kurve, wenn man <code>t</code> von <code>0</code> nach <code>1</code> laufen lässt.</p>
+            <p>Mehr Infor unter: <a href="https://javascript.info/bezier-curve">https://javascript.info/bezier-curve</a></p>
         </div>
     </div>
 </body>

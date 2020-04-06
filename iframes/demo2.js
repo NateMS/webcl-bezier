@@ -1,4 +1,3 @@
-console.log('demo2');
 window.onload = function() {
 
     var canvas = document.getElementById("canvas"),
