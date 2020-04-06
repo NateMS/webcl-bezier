@@ -185,25 +185,44 @@ transition-timing-function: cubic-bezier(0.0, 0.0, 0.58, 1.0);</pre>
             <div class="grid-wrapper grid-2">
                 <div class="grid-item">
                     <h3>Quadratische Kurve</h3>
-                    <canvas id="quadraticCanvas"></canvas>
-                    <pre>var c = document.getElementById("quadraticCanvas");
+                    <div class="grid-wrapper grid-2-one-to-three">
+                        <div class="grid-item">
+                            <canvas id="quadraticCanvas"></canvas>
+                        </div>
+                        <div class="grid-item">
+                            <pre>var c = document.getElementById("quadraticCanvas");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.moveTo(20, 20);
 <b>ctx.quadraticCurveTo(20, 100, 200, 20);</b>
-ctx.stroke();</pre>
+ctx.stroke();
+ 
+ 
+</pre>
+                        </div>
+                    </div>
                 </div>
                 <div class="grid-item">
                     <h3>Kubische Kurve</h3>
-                    <canvas id="cubicCanvas"></canvas>
-                    <pre>var c = document.getElementById("cubicCanvas");
+                    <div class="grid-wrapper grid-2-one-to-three">
+                        <div class="grid-item">
+                            <canvas id="cubicCanvas"></canvas>
+                        </div>
+                        <div class="grid-item">
+                            <pre>var c = document.getElementById("cubicCanvas");
 var ctx = c.getContext("2d");
 ctx.beginPath();
 ctx.moveTo(20, 20);
 <b>ctx.bezierCurveTo(40, 130, 220, 20, 220, 130);</b>
-ctx.stroke();</pre>
+ctx.stroke();
+ 
+ 
+</pre>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <h3>Mathematische Formel</h3>
             <p>Die Kurven können auch durch eine Formel berechnet werden. Dabei haben wir die Kontrollpunkte <code>P<sub>i</sub></code>. Ein Punkt hat jeweils die Koordinaten <code>P<sub>1</sub> = (x<sub>1</sub>, y<sub>1</sub>)</code> etc. und den Parameter
                 <code>t</code> zwischen <code>[0,1]</code>.<br>
             </p>
