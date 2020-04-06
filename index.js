@@ -61,12 +61,12 @@ window.onload = function() {
         {
             id: "canvas-custom",
             cp1: {
-                x: 0.25,
+                x: 0.5,
                 y: 0.7
             },
             cp2: {
                 x: 0.7,
-                y: 1.3
+                y: -0.3
             },
         }
     ];
