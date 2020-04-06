@@ -69,12 +69,12 @@ window.onload = function() {
         {
             id: "canvas-custom",
             cp1: {
-                x: 0.5,
-                y: 0.7
+                x: 0.9,
+                y: 1.44
             },
             cp2: {
-                x: 0.7,
-                y: -0.3
+                x: 0.02,
+                y: -0.52
             },
         }
     ];
