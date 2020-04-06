@@ -64,6 +64,15 @@ h3 {
     margin: 5px 0;
 }
 
+pre {
+    font-family: monospace;
+    display: block;
+    background-color: #233038;
+    color: #EFEFEF;
+    padding: 8px;
+    border-left: 12px solid #D74D3C;
+}
+
 #navigation a {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
@@ -112,4 +121,14 @@ ul {
 .pg-dark h2,
 .pg-dark h3 {
     color: #EFEFEF;
+}
+
+.transitions {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+
+.transition {
+    margin: 5px;
 }
